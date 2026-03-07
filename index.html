@@ -13,10 +13,20 @@
 		<script type="text/javascript" src="./renxi/functions.js" charset="utf-8"></script>
         <script type="text/javascript" src="./renxi/love.js" charset="utf-8"></script>
 
+		<style>
+			#fullBtn{
+				position:fixed;
+				top:10px;
+				left:10px;
+				z-index:999999;
+				padding:6px 10px;
+				}
+
+		</style>
 </head>
     <body>
  
-			<audio id="bgMusic" autoplay="autoplay" >
+			<audio id="bgMusic" loop >
     			<source src="music/nhac.mp3" type="audio/mp3" />
 			</audio>
           
@@ -56,12 +66,11 @@
         if (!canvas[0].getContext) {
             $("#error").show();
             return false;        }
-
-        var width = canvas.width();
-        var height = canvas.height();        
-        canvas.attr("width", width);
-        canvas.attr("height", height);
-        var opts = {
+//npc
+        var width = canvas[0].width;
+	 	var height = canvas[0].height;
+        
+		var opts = {
             seed: {
                 x: width / 2 - 20,
                 color: "rgb(190, 26, 37)",
@@ -224,6 +233,7 @@
 
 </body>
 </html>
+
 
 
 
