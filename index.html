@@ -74,10 +74,15 @@
             $("#error").show();
             return false;        }
 
-        var width = window.innerWidth;
-		var height = window.innerHeight;
+        var width = 1100;
+		var height = 680;
 		canvas.attr("width", width);
 		canvas.attr("height", height);
+		
+		// scale theo màn hình
+		var scale = Math.min(window.innerWidth / width, window.innerHeight / height);
+		$("#wrap").css("transform", "scale(" + scale + ")");
+		$("#wrap").css("transform-origin", "top left");
 		
         var opts = {
             seed: {
@@ -264,6 +269,7 @@
 
 </body>
 </html>
+
 
 
 
